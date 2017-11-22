@@ -33,7 +33,7 @@
                     "required": 1
                 }
             }
-        },
+        }
     },
     "countries": {
         "vType": "object",
@@ -85,5 +85,4 @@
             }
         }
     }
-
 }
