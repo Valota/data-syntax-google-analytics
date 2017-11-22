@@ -1,87 +1,91 @@
 {
-    "vType": "object",
-    "site": {
-        "vType": "text",
-        "required": 1
-    },
-    "activity": {
+    "vType": "array",
+    "required": 1,
+    "elem": {
         "vType": "object",
-        "required": 1,
-        "period_start": {
+        "site": {
             "vType": "text",
             "required": 1
         },
-        "period_end": {
-            "vType": "text",
-            "required": 1
-        },
-        "data": {
-            "vType": "array",
-            "required": 1,
-            "elem": {
-                "vType": "object",
-                "day": {
-                    "vType": "int",
-                    "required": 1
-                },
-                "hour": {
-                    "vType": "int",
-                    "required": 1
-                },
-                "hits": {
-                    "vType": "int",
-                    "required": 1
-                }
-            }
-        }
-    },
-    "countries": {
-        "vType": "object",
-        "required": 1,
-        "period_start": {
-            "vType": "text",
-            "required": 1
-        },
-        "period_end": {
-            "vType": "text",
-            "required": 1
-        },
-        "data": {
-            "vType": "array",
-            "required": 1,
-            "elem": {
-                "vType": "object",
-                "iso": {
-                    "vType": "text",
-                    "required": 1
-                },
-                "hits": {
-                    "vType": "int",
-                    "required": 1
-                }
-            }
-        }
-    },
-    "traffic": {
-        "vType": "array",
-        "required": 1,
-        "elem": {
+        "activity": {
             "vType": "object",
-            "date": {
+            "required": 1,
+            "period_start": {
                 "vType": "text",
                 "required": 1
             },
-            "desktop": {
-                "vType": "int",
+            "period_end": {
+                "vType": "text",
                 "required": 1
             },
-            "mobile": {
-                "vType": "int",
+            "data": {
+                "vType": "array",
+                "required": 1,
+                "elem": {
+                    "vType": "object",
+                    "day": {
+                        "vType": "int",
+                        "required": 1
+                    },
+                    "hour": {
+                        "vType": "int",
+                        "required": 1
+                    },
+                    "hits": {
+                        "vType": "int",
+                        "required": 1
+                    }
+                }
+            }
+        },
+        "countries": {
+            "vType": "object",
+            "required": 1,
+            "period_start": {
+                "vType": "text",
                 "required": 1
             },
-            "tablet": {
-                "vType": "int",
+            "period_end": {
+                "vType": "text",
                 "required": 1
+            },
+            "data": {
+                "vType": "array",
+                "required": 1,
+                "elem": {
+                    "vType": "object",
+                    "iso": {
+                        "vType": "text",
+                        "required": 1
+                    },
+                    "visits": {
+                        "vType": "int",
+                        "required": 1
+                    }
+                }
+            }
+        },
+        "traffic": {
+            "vType": "array",
+            "required": 1,
+            "elem": {
+                "vType": "object",
+                "date": {
+                    "vType": "text",
+                    "required": 1
+                },
+                "desktop": {
+                    "vType": "int",
+                    "required": 1
+                },
+                "mobile": {
+                    "vType": "int",
+                    "required": 1
+                },
+                "tablet": {
+                    "vType": "int",
+                    "required": 1
+                }
             }
         }
     }
