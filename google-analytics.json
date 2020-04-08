@@ -1,92 +1,108 @@
 {
-    "vType": "array",
-    "required": 1,
-    "elem": {
-        "vType": "object",
-        "site": {
-            "vType": "text",
-            "required": 1
-        },
-        "activity": {
-            "vType": "object",
-            "required": 1,
-            "period_start": {
-                "vType": "text",
-                "required": 1
-            },
-            "period_end": {
-                "vType": "text",
-                "required": 1
-            },
-            "data": {
-                "vType": "array",
-                "required": 1,
-                "elem": {
-                    "vType": "object",
-                    "day": {
-                        "vType": "int",
-                        "required": 1
-                    },
-                    "hour": {
-                        "vType": "int",
-                        "required": 1
-                    },
-                    "hits": {
-                        "vType": "int",
-                        "required": 1
-                    }
-                }
-            }
-        },
-        "countries": {
-            "vType": "object",
-            "required": 1,
-            "period_start": {
-                "vType": "text",
-                "required": 1
-            },
-            "period_end": {
-                "vType": "text",
-                "required": 1
-            },
-            "data": {
-                "vType": "array",
-                "required": 1,
-                "elem": {
-                    "vType": "object",
-                    "iso": {
-                        "vType": "text",
-                        "required": 1
-                    },
-                    "visits": {
-                        "vType": "int",
-                        "required": 1
-                    }
-                }
-            }
-        },
-        "traffic": {
-            "vType": "array",
-            "required": 1,
-            "elem": {
-                "vType": "object",
-                "date": {
-                    "vType": "text",
-                    "required": 1
-                },
-                "desktop": {
-                    "vType": "int",
-                    "required": 1
-                },
-                "mobile": {
-                    "vType": "int",
-                    "required": 1
-                },
-                "tablet": {
-                    "vType": "int",
-                    "required": 1
-                }
-            }
-        }
-    }
+  "$id": "https:\/\/raw.githubusercontent.com\/Valota\/data-syntax-google-analytics\/v2.0.0\/google-analytics.json",
+  "$schema": "http:\/\/json-schema.org\/draft-07\/schema#",
+  "description": "google-analytics data syntax for Valotalive",
+  "type": "array",
+  "items": {
+	"type": "object",
+	"properties": {
+	  "site": {
+		"type": "string"
+	  },
+	  "activity": {
+		"type": "object",
+		"properties": {
+		  "period_start": {
+			"type": "string"
+		  },
+		  "period_end": {
+			"type": "string"
+		  },
+		  "data": {
+			"type": "array",
+			"items": {
+			  "type": "object",
+			  "properties": {
+				"day": {
+				  "type": "integer"
+				},
+				"hour": {
+				  "type": "integer"
+				},
+				"hits": {
+				  "type": "integer"
+				}
+			  },
+			  "required": [
+				"day",
+				"hour",
+				"hits"
+			  ]
+			}
+		  }
+		}
+	  },
+	  "countries": {
+		"type": "object",
+		"properties": {
+		  "period_start": {
+			"type": "string"
+		  },
+		  "period_end": {
+			"type": "string"
+		  },
+		  "data": {
+			"type": "array",
+			"items": {
+			  "type": "object",
+			  "properties": {
+				"iso": {
+				  "type": "string"
+				},
+				"visits": {
+				  "type": "integer"
+				}
+			  },
+			  "required": [
+				"iso",
+				"visits"
+			  ]
+			}
+		  }
+		}
+	  },
+	  "traffic": {
+		"type": "array",
+		"items": {
+		  "type": "object",
+		  "properties": {
+			"date": {
+			  "type": "string"
+			},
+			"desktop": {
+			  "type": "integer"
+			},
+			"mobile": {
+			  "type": "integer"
+			},
+			"tablet": {
+			  "type": "integer"
+			}
+		  },
+		  "required": [
+			"date",
+			"desktop",
+			"mobile",
+			"tablet"
+		  ]
+		}
+	  }
+	},
+	"required": [
+	  "site",
+	  "activity",
+	  "countries",
+	  "traffic"
+	]
+  }
 }
